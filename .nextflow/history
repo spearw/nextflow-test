@@ -1,0 +1,1 @@
+2021-08-23 10:13:39	5.8s	hungry_lorenz	OK	1adda63ba2116a45f0abc481b5f890b4	c0798bee-c6f5-4d33-802f-5c7323496343	nextflow run main.nf -with-tower

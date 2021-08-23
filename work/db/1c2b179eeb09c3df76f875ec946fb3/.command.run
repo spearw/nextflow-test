@@ -120,7 +120,7 @@ nxf_write_trace() {
 nxf_trace_mac() {
     local start_millis=$(nxf_date)
 
-    /bin/bash -ue /Users/williamspear/projects/nextflow-test/src/nextflow/work/b7/8d698ac3fbbe333acb9c7ef09d3514/.command.sh
+    /bin/bash -ue /Users/williamspear/projects/nextflow-test/work/db/1c2b179eeb09c3df76f875ec946fb3/.command.sh
 
     local end_millis=$(nxf_date)
     local wall_time=$((end_millis-start_millis))
@@ -145,7 +145,7 @@ nxf_trace_linux() {
     local start_millis=$(nxf_date)
     trap 'kill $mem_proc' ERR
     
-    /bin/bash -ue /Users/williamspear/projects/nextflow-test/src/nextflow/work/b7/8d698ac3fbbe333acb9c7ef09d3514/.command.sh &
+    /bin/bash -ue /Users/williamspear/projects/nextflow-test/work/db/1c2b179eeb09c3df76f875ec946fb3/.command.sh &
     local task=$!
 
     mem_fd=$(nxf_fd)
@@ -236,7 +236,7 @@ nxf_mktemp() {
 
 on_exit() {
     exit_status=${nxf_main_ret:=$?}
-    printf $exit_status > /Users/williamspear/projects/nextflow-test/src/nextflow/work/b7/8d698ac3fbbe333acb9c7ef09d3514/.exitcode
+    printf $exit_status > /Users/williamspear/projects/nextflow-test/work/db/1c2b179eeb09c3df76f875ec946fb3/.exitcode
     set +u
     [[ "$tee1" ]] && kill $tee1 2>/dev/null
     [[ "$tee2" ]] && kill $tee2 2>/dev/null
@@ -251,7 +251,7 @@ on_term() {
 }
 
 nxf_launch() {
-    docker run -i --cpus 1.0 -e "NXF_DEBUG=${NXF_DEBUG:=0}" -v /Users/williamspear/projects/nextflow-test/src/nextflow/work/b7/8d698ac3fbbe333acb9c7ef09d3514:/Users/williamspear/projects/nextflow-test/src/nextflow/work/b7/8d698ac3fbbe333acb9c7ef09d3514 -v "$PWD":"$PWD" -w "$PWD" --entrypoint /bin/bash --name $NXF_BOXID ralatsdio/bbtools:v38.73 -c "/bin/bash /Users/williamspear/projects/nextflow-test/src/nextflow/work/b7/8d698ac3fbbe333acb9c7ef09d3514/.command.run nxf_trace"
+    docker run -i --cpus 1.0 -e "NXF_DEBUG=${NXF_DEBUG:=0}" -v /Users/williamspear/projects/nextflow-test/work/db/1c2b179eeb09c3df76f875ec946fb3:/Users/williamspear/projects/nextflow-test/work/db/1c2b179eeb09c3df76f875ec946fb3 -v "$PWD":"$PWD" -w "$PWD" --entrypoint /bin/bash --name $NXF_BOXID ralatsdio/bbtools:v38.73 -c "/bin/bash /Users/williamspear/projects/nextflow-test/work/db/1c2b179eeb09c3df76f875ec946fb3/.command.run nxf_trace"
 }
 
 nxf_stage() {
@@ -272,7 +272,7 @@ nxf_main() {
     export NXF_BOXID="nxf-$(dd bs=18 count=1 if=/dev/urandom 2>/dev/null | base64 | tr +/ 0A)"
     NXF_SCRATCH=''
     [[ $NXF_DEBUG > 0 ]] && nxf_env
-    touch /Users/williamspear/projects/nextflow-test/src/nextflow/work/b7/8d698ac3fbbe333acb9c7ef09d3514/.command.begin
+    touch /Users/williamspear/projects/nextflow-test/work/db/1c2b179eeb09c3df76f875ec946fb3/.command.begin
     set +u
     # beforeScript directive
     docker login -u ralatsdio -p "$RALATSDIO_TOKEN"
