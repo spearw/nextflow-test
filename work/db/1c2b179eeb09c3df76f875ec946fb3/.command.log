@@ -1,3 +1,0 @@
-WARNING! Using --password via the CLI is insecure. Use --password-stdin.
-Login Succeeded
-Removing login credentials for https://index.docker.io/v1/

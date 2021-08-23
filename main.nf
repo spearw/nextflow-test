@@ -4,7 +4,7 @@ echo true
 
 script:
 """
-echo bbduk.sh > bbduk.txt
+bbduk.sh > bbduk.txt
 """
 }
 
