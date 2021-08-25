@@ -2,6 +2,9 @@ process bbmerge {
 
 echo true
 
+beforeScript 'docker login -u ralatsdio -p "$RALATSDIO_TOKEN"'
+afterScript 'docker logout'
+
 script:
 """
 bbduk.sh > bbduk.txt
