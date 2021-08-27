@@ -2,10 +2,9 @@ process bbmerge {
 
 echo true
 
-
 script:
 """
-echo "bbduk.sh" > bbduk.txt
+echo bbduk.sh > bbduk.txt
 """
 }
 
