@@ -1,9 +1,10 @@
 process bbmerge {
 
+publishDir "work"
 echo true
 
 output:
-file *.txt into output_ch
+file "*.txt" into output_ch
 
 script:
 """
