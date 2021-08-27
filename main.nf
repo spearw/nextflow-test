@@ -2,9 +2,12 @@ process bbmerge {
 
 echo true
 
+output:
+file *.txt into output_ch
+
 script:
 """
-echo bbduk.sh > bbduk.txt
+bbduk.sh > bbduk.txt
 """
 }
 
